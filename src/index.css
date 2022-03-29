@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.personalDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.personalInput{
+  margin:5px
+}
