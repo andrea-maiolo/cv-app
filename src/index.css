@@ -12,11 +12,40 @@ code {
     monospace;
 }
 
+.formDiv{
+  margin:5px;
+}
+
+.titleDiv {
+  background-color: #4b61d1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .personalDiv{
   display: flex;
   flex-direction: column;
 }
 
 .personalInput{
+  margin:5px
+}
+
+.jobsDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.jobsInput{
+  margin:5px
+}
+
+.educationDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.educationInput{
   margin:5px
 }
