@@ -7,6 +7,7 @@ class PersonalInfo extends Component {
     render() {
       return (
         <div className="personalDiv">
+            <h2>Personal information</h2>
             <input onChange={this.props.onChange} type="text" className="personalInput" placeholder="First Name" name="firstName" required></input>
             <input onChange={this.props.onChange} type="text" className="personalInput" placeholder="Last Name" name="lastName" required></input>
             <input type="file" className="personalInput" name="photo" accept="image/png, image/jpeg"></input>

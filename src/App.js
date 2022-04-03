@@ -5,17 +5,43 @@ import Education from './components/Education'
 
 function App() {
 
-  const [personal, setPersonal] = React.useState({})
+  const [personal, setPersonal] = React.useState({});
+  const [jobs, setJobs] = React.useState({});
+  const [education, setEducation] = React.useState({});
 
   const handleSubmit= function(e){
     e.preventDefault();
     console.log(personal)
+    console.log(jobs)
+    console.log(education)
   }
 
-  const handleInputChange= function(e){
+  const handlePersonalInputChange= function(e){
     let name = e.target.name;
     let value = e.target.value;
     setPersonal(prevState => {
+      return{
+        ...prevState,
+        [name]:value
+      }
+    })
+  }
+
+  const handleJobInputChange= function(e){
+    let name = e.target.name;
+    let value = e.target.value;
+    setJobs(prevState => {
+      return{
+        ...prevState,
+        [name]:value
+      }
+    })
+  }
+
+  const handleEducationInputChange= function(e){
+    let name = e.target.name;
+    let value = e.target.value;
+    setEducation(prevState => {
       return{
         ...prevState,
         [name]:value
@@ -29,16 +55,9 @@ function App() {
         <h1>CV EDITOR</h1>
       </div>
       <form className="formDiv">
-        <h2>Personal information</h2>
-        <PersonalInfo onChange={handleInputChange} personal={personal}/>
-        <h2>Jobs Experience</h2>
-        <JobsExperience />
-        <button id="addJobs">Add</button>
-        <button id="deleteJobs">Delete</button>
-        <h2>Education</h2>
-        <Education />
-        <button id="addEducation">Add</button>
-        <button id="deleteEducation">Delete</button>
+        <PersonalInfo onChange={handlePersonalInputChange} personal={personal}/>
+        <JobsExperience onChange={handleJobInputChange} jobs={jobs}/>
+        <Education onChange={handleEducationInputChange} />
         <button id="reset">Reset</button>
         <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>

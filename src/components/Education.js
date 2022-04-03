@@ -7,12 +7,15 @@ class Education extends Component {
     render() {
       return (
         <div className="educationDiv">
-            <input type="text" className="educationInput" placeholder="University or High School" name="university"></input>
-            <input type="text" className="educationInput" placeholder="City" name="cityEducation"></input>
-            <input type="text" className="educationInput" placeholder="Degree" name="degree"></input>
-            <input type="text" className="educationInput" placeholder="Subject" name="subject"></input>
-            <input type="text" className="educationInput" placeholder="From" name="from"></input>
-            <input type="text" className="educationInput" placeholder="To" name="to"></input>
+            <h2>Education</h2>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="University or High School" name="university"></input>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="City" name="cityEducation"></input>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="Degree" name="degree"></input>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="Subject" name="subject"></input>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="From" name="from"></input>
+            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="To" name="to"></input>
+            <button id="addEducation">Add</button>
+            <button id="deleteEducation">Delete</button>
         </div>
       )
     }
