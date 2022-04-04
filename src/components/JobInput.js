@@ -1,6 +1,7 @@
 import React, {Component, useState, useEffect} from 'react';
 
 const JobInput = function(props){
+    console.log(props.id)
     return(
         <div className="singleJob">
             <input onChange={props.onChange} type="text" className="jobsInput" placeholder="Position" name="position"></input>
@@ -8,7 +9,7 @@ const JobInput = function(props){
             <input onChange={props.onChange} type="text" className="jobsInput" placeholder="City" name="city"></input>
             <input onChange={props.onChange} type="text" className="jobsInput" placeholder="From" name="from"></input>
             <input onChange={props.onChange} type="text" className="jobsInput" placeholder="To" name="to"></input>
-            <button id="deleteJobs">Delete</button>
+            <button id="deleteJobs" onClick={props.handleDeleteJob}>Delete</button>
         </div>
     )
 }

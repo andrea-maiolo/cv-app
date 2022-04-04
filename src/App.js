@@ -57,7 +57,7 @@ function App() {
       <form className="formDiv">
         <PersonalInfo onChange={handlePersonalInputChange} personal={personal}/>
         <JobsExperience onChange={handleJobInputChange} jobs={jobs}/>
-        <Education onChange={handleEducationInputChange} />
+        {/* <Education onChange={handleEducationInputChange} /> */}
         <button id="reset">Reset</button>
         <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>

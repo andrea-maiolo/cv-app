@@ -8,9 +8,10 @@ function JobsExperience(props) {
 
   useEffect(() => {
     setJobs(prevJobs=> {
+      let k = numberOfJob[numberOfJob.length-1]
       return [
         ...prevJobs,
-        <JobInput onChange={props.onChange}/>
+        <JobInput key={k} id={k} onChange={props.onChange} handleDeleteJob={handleDeleteJob}/>
       ]
     })
   },[numberOfJob]); 
@@ -18,11 +19,18 @@ function JobsExperience(props) {
   const handleAddJob = function(e){
     e.preventDefault();
     setNumberOfJob(prevState=> {
+      let count = prevState[prevState.length - 1];
       return [
         ...prevState,
-        1
+        count +1
       ]
     })
+  }
+
+  const handleDeleteJob= function(e){
+    e.preventDefault();
+    let a = "we"
+    console.log(a)
   }
 
   return (
