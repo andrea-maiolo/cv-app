@@ -1,20 +1,37 @@
 import React, {Component, useState, useEffect} from 'react';
 import JobInput from './JobInput'
 
-class JobsExperience extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-      console.log(JobInput)
+function JobsExperience(props) {
 
-      return (
-        <div className="jobsDiv">
-            <JobInput />
-            <button id="addJobs">Add</button>
-        </div>
-      )
-    }
+  const [numberOfJob, setNumberOfJob] = useState([1]); 
+  const [jobs, setJobs] =useState([]);
+
+  useEffect(() => {
+    setJobs(prevJobs=> {
+      return [
+        ...prevJobs,
+        <JobInput onChange={props.onChange}/>
+      ]
+    })
+  },[numberOfJob]); 
+
+  const handleAddJob = function(e){
+    e.preventDefault();
+    setNumberOfJob(prevState=> {
+      return [
+        ...prevState,
+        1
+      ]
+    })
+  }
+
+  return (
+    <div className="jobsDiv">
+      <h2>Jobs Experience</h2>
+      {jobs}
+      <button id="addJobs" onClick={handleAddJob}>Add</button>
+    </div> 
+  )
 }
 
-export default JobsExperience;
+export default JobsExperience

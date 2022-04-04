@@ -1,24 +1,37 @@
 import React, {Component, useState, useEffect} from 'react';
+import EduInput from './EduInput'
 
-class Education extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-      return (
-        <div className="educationDiv">
-            <h2>Education</h2>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="University or High School" name="university"></input>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="City" name="cityEducation"></input>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="Degree" name="degree"></input>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="Subject" name="subject"></input>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="From" name="from"></input>
-            <input onChange={this.props.onChange} type="text" className="educationInput" placeholder="To" name="to"></input>
-            <button id="addEducation">Add</button>
-            <button id="deleteEducation">Delete</button>
-        </div>
-      )
-    }
+function Education(props) {
+  
+  const [numberOfEdu, setNumberOfEdu] = useState([1]); 
+  const [edus, setEdus] =useState([]);
+
+  useEffect(() => {
+    setEdus(prevEdus=> {
+      return [
+        ...prevEdus,
+        <EduInput onChange={props.onChange}/>
+      ]
+    })
+  },[numberOfEdu]);
+
+  const handleAddEdu = function(e){
+    e.preventDefault();
+    setNumberOfEdu(prevState=> {
+      return [
+        ...prevState,
+        1
+      ]
+    })
+  }
+
+  return (
+    <div className="educationDiv">
+      <h2>Education</h2>
+      {edus}
+      <button id="addEducation" onClick={handleAddEdu}>Add</button>
+    </div>
+  )
 }
 
 export default Education;

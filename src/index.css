@@ -37,11 +37,21 @@ code {
   flex-direction: column;
 }
 
+.singleJob{
+  display: flex;
+  flex-direction: column;
+}
+
 .jobsInput{
   margin:5px
 }
 
 .educationDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.singleEdu{
   display: flex;
   flex-direction: column;
 }
