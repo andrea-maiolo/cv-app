@@ -1,37 +1,53 @@
 import React, {Component, useState, useEffect} from 'react';
 import JobInput from './JobInput'
+import {nanoid} from 'nanoid';
 
 function JobsExperience(props) {
 
-  const [numberOfJob, setNumberOfJob] = useState([1]); 
-  const [jobs, setJobs] =useState([]);
+  const [numberOfJobs, setNumberOfJobs] = useState([]); 
+  const [count, setCount] =useState(1);
 
   useEffect(() => {
-    setJobs(prevJobs=> {
-      let k = numberOfJob[numberOfJob.length-1]
-      return [
-        ...prevJobs,
-        <JobInput key={k} id={k} onChange={props.onChange} handleDeleteJob={handleDeleteJob}/>
+    console.log("running effect")
+    setNumberOfJobs(prevState=>{
+      return [ 
+        ...prevState,
+        nanoid()
       ]
     })
-  },[numberOfJob]); 
+  },[0]); 
+
 
   const handleAddJob = function(e){
     e.preventDefault();
-    setNumberOfJob(prevState=> {
+    setCount(prevState => prevState +1)
+    setNumberOfJobs(prevState=> {
       let count = prevState[prevState.length - 1];
       return [
         ...prevState,
-        count +1
+        nanoid()
       ]
     })
   }
 
   const handleDeleteJob= function(e){
     e.preventDefault();
-    let a = "we"
-    console.log(a)
+    console.log(numberOfJobs)
   }
+
+  const jobs = numberOfJobs.map(e => {
+    console.log("runnigs jobs")
+    return (
+      <JobInput 
+        key={e}
+        id={e}
+        number={count}
+        noj={numberOfJobs}
+        onChange={props.onChange}
+        handleDeleteJob={handleDeleteJob}/>
+    )
+  }) 
+
 
   return (
     <div className="jobsDiv">

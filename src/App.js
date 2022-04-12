@@ -55,7 +55,7 @@ function App() {
         <h1>CV EDITOR</h1>
       </div>
       <form className="formDiv">
-        <PersonalInfo onChange={handlePersonalInputChange} personal={personal}/>
+        {/* <PersonalInfo onChange={handlePersonalInputChange} personal={personal}/> */}
         <JobsExperience onChange={handleJobInputChange} jobs={jobs}/>
         {/* <Education onChange={handleEducationInputChange} /> */}
         <button id="reset">Reset</button>
