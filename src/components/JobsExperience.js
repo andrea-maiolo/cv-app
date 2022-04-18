@@ -4,55 +4,52 @@ import {nanoid} from 'nanoid';
 
 function JobsExperience(props) {
 
-  const [numberOfJobs, setNumberOfJobs] = useState([]); 
-  const [count, setCount] =useState(1);
+  const [jobsExp, setJobExp] =useState([]);
+  const [domOfJE, setDomOfJE] = useState()
 
-  useEffect(() => {
-    console.log("running effect")
-    setNumberOfJobs(prevState=>{
-      return [ 
-        ...prevState,
-        nanoid()
-      ]
-    })
-  },[0]); 
-
+  useEffect(()=>{
+    const firstExp = {
+        id:nanoid(),
+        onChange: props.onChange,
+        handleDeleteJob: handleDeleteJob
+    }
+    setJobExp([firstExp])
+  },[0])
 
   const handleAddJob = function(e){
     e.preventDefault();
-    setCount(prevState => prevState +1)
-    setNumberOfJobs(prevState=> {
-      let count = prevState[prevState.length - 1];
-      return [
-        ...prevState,
-        nanoid()
-      ]
-    })
+    const newExp = {
+      id:nanoid(),
+      onChange: props.onChange,
+      handleDeleteJob: handleDeleteJob
+    }
+    setJobExp(prevState => [...prevState, newExp]);
   }
 
   const handleDeleteJob= function(e){
     e.preventDefault();
-    console.log(numberOfJobs)
+    let deleteReference =e.target.id
+    let dele = jobsExp.find(job => job.id===deleteReference )
+    const newJobExpArray = jobsExp.filter( e => e !== dele)
+    setJobExp(newJobExpArray)
   }
 
-  const jobs = numberOfJobs.map(e => {
-    console.log("runnigs jobs")
-    return (
-      <JobInput 
-        key={e}
-        id={e}
-        number={count}
-        noj={numberOfJobs}
-        onChange={props.onChange}
-        handleDeleteJob={handleDeleteJob}/>
+  useEffect(() => {
+    let newDom = jobsExp.map(job => {
+      return(
+        <div  key={job.id}> 
+          <JobInput props={job}/>
+          <button id={job.id}  onClick={handleDeleteJob}>Delete</button>
+        </div>
+      )}
     )
-  }) 
-
+    setDomOfJE(newDom)
+  },[jobsExp])
 
   return (
     <div className="jobsDiv">
       <h2>Jobs Experience</h2>
-      {jobs}
+      {domOfJE}
       <button id="addJobs" onClick={handleAddJob}>Add</button>
     </div> 
   )
