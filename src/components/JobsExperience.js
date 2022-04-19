@@ -3,6 +3,7 @@ import JobInput from './JobInput'
 import {nanoid} from 'nanoid';
 
 function JobsExperience(props) {
+ // console.log(props)
 
   const [jobsExp, setJobExp] =useState([]);
   const [domOfJE, setDomOfJE] = useState()
@@ -11,7 +12,8 @@ function JobsExperience(props) {
     const firstExp = {
         id:nanoid(),
         onChange: props.onChange,
-        handleDeleteJob: handleDeleteJob
+        handleDeleteJob: handleDeleteJob,
+        stateForValue: props.jobs
     }
     setJobExp([firstExp])
   },[0])
@@ -21,7 +23,8 @@ function JobsExperience(props) {
     const newExp = {
       id:nanoid(),
       onChange: props.onChange,
-      handleDeleteJob: handleDeleteJob
+      handleDeleteJob: handleDeleteJob,
+      stateForValue: props.jobs
     }
     setJobExp(prevState => [...prevState, newExp]);
   }

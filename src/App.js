@@ -5,7 +5,16 @@ import Education from './components/Education'
 
 function App() {
 
-  const [personal, setPersonal] = React.useState({});
+  const [personal, setPersonal] = React.useState(
+    {
+      firstName: "",
+      lastName:"",
+      address:"",
+      email:"",
+      phoneNumber:"",
+      description:""
+    }
+    );
   const [jobs, setJobs] = React.useState({});
   const [education, setEducation] = React.useState({});
 
@@ -49,6 +58,13 @@ function App() {
     })
   }
 
+  // const handlePrint = function(e){
+  //   e.preventDefault()
+  //   console.log(e)
+  //   window.print()
+  //   //this is how you print the page on submit
+  // }
+
   return (
     <div className="App">
       <div className="titleDiv">
@@ -57,9 +73,9 @@ function App() {
       <form className="formDiv">
         <PersonalInfo onChange={handlePersonalInputChange} personal={personal}/>
         <JobsExperience onChange={handleJobInputChange} jobs={jobs}/>
-        <Education onChange={handleEducationInputChange} />
-        <button id="reset">Reset</button>
+        <Education onChange={handleEducationInputChange} education={education} />
         <button type="submit" onClick={handleSubmit}>Submit</button>
+        {/* <button type="reset">Reset</button> */}
       </form>
     </div>
   );
