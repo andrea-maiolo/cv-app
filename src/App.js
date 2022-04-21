@@ -22,7 +22,6 @@ function App() {
     const firstExp = {
         id:nanoid(),
         onChange: handleJobInputChange,
-        handleDeleteJob: handleDeleteJob,
         position:"",
         company:"",
         city:"",
@@ -69,7 +68,6 @@ function App() {
     const newExp = {
       id:nanoid(),
       onChange: handleJobInputChange,
-      handleDeleteJob: handleDeleteJob,
       position:"",
       company:"",
       city:"",
@@ -77,26 +75,6 @@ function App() {
       to:"",
     }
     setJobs(prevState => [...prevState, newExp]);
-  }
-  
-  const handleDeleteJob= function(e){
-    e.preventDefault();
-    let deleteReference =e.target.id
-    deletingJob(deleteReference)
-    //let dele = jobs.map(job => console.log(job))
-    // let dele = jobs.find(job => job.id === deleteReference)
-    //const newJobExpArray = jobs.filter( e => e !== dele)
-    // setJobs(newJobExpArray)
-  }
-
-  function deletingJob(idToDelete){
-    console.log(idToDelete)
-    let j = [...jobs]
-    console.log(j)
-    let dele = j.map(job => job.id === idToDelete ? console.log(job) : console.log("no found"))
-    console.log(dele)
-    // let newJobExpArray = jobs.filter(e => e !== dele)
-    // console.log(newJobExpArray)
   }
 
   const handleEducationInputChange= function(e){
