@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import JobInput from './JobInput';
 
 function JobsExperience(props) {
@@ -6,7 +6,6 @@ function JobsExperience(props) {
   const setJobs = props.setJobs
   const [domOfJE, setDomOfJE] = useState()
 
-  //this run every time a new job is added so you can DOM it
   useEffect(() => {
     let newDom = jobs.map(job => {
       return(

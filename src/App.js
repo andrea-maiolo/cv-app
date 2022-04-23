@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import PersonalInfo from './components/PersonalInfo'
 import JobsExperience from './components/JobsExperience'
 import Education from './components/Education'
@@ -79,17 +79,6 @@ function App() {
     }
     setEducation(prevState => [...prevState, newExp]);
   }
-
-  // const handleEducationInputChange= function(e){
-  //   let name = e.target.name;
-  //   let value = e.target.value;
-  //   setEducation(prevState => {
-  //     return{
-  //       ...prevState,
-  //       [name]:value
-  //     }
-  //   })
-  // }
 
   // const handlePrint = function(e){
   //   e.preventDefault()

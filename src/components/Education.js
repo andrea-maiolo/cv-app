@@ -1,6 +1,5 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import EduInput from './EduInput'
-import {nanoid} from 'nanoid';
 
 function Education(props) {
   const education = props.education
