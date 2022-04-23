@@ -1,59 +1,48 @@
-import React, {Component, useState, useEffect} from 'react';
-import JobInput from './JobInput'
-import {nanoid} from 'nanoid';
+import React, {useState, useEffect} from 'react';
+import JobInput from './JobInput';
 
 function JobsExperience(props) {
- // console.log(props)
-
-  const [jobsExp, setJobExp] =useState([]);
+  const jobs = props.jobs
+  const setJobs = props.setJobs
   const [domOfJE, setDomOfJE] = useState()
 
-  useEffect(()=>{
-    const firstExp = {
-        id:nanoid(),
-        onChange: props.onChange,
-        handleDeleteJob: handleDeleteJob,
-        stateForValue: props.jobs
-    }
-    setJobExp([firstExp])
-  },[0])
+  useEffect(() => {
+    let newDom = jobs.map(job => {
+      return(
+        <div  key={job.id}> 
+          <JobInput job={job} onChange={handleJobInputChange}/>
+          <button id={job.id} onClick={handleDeleteJob}>Delete</button>
+        </div>
+      )}
+    )
+    setDomOfJE(newDom)
+  },[jobs])
 
-  const handleAddJob = function(e){
+  const handleJobInputChange= function(e){
     e.preventDefault();
-    const newExp = {
-      id:nanoid(),
-      onChange: props.onChange,
-      handleDeleteJob: handleDeleteJob,
-      stateForValue: props.jobs
-    }
-    setJobExp(prevState => [...prevState, newExp]);
+    let name = e.target.name;
+    let value = e.target.value;
+    let currentJob = e.target.id;
+    let updatedJobs =[...jobs];
+    const modified = jobs.find(job => job.id === currentJob)
+    const index = jobs.findIndex(job => job.id === currentJob);
+    modified[name] = value ;
+    updatedJobs[index] = modified
+    setJobs(updatedJobs)   
   }
 
   const handleDeleteJob= function(e){
     e.preventDefault();
     let deleteReference =e.target.id
-    let dele = jobsExp.find(job => job.id===deleteReference )
-    const newJobExpArray = jobsExp.filter( e => e !== dele)
-    setJobExp(newJobExpArray)
+    let dele = jobs.find(job => job.id === deleteReference)
+    const newJobExpArray = jobs.filter( e => e !== dele)
+    setJobs(newJobExpArray)
   }
-
-  useEffect(() => {
-    let newDom = jobsExp.map(job => {
-      return(
-        <div  key={job.id}> 
-          <JobInput props={job}/>
-          <button id={job.id}  onClick={handleDeleteJob}>Delete</button>
-        </div>
-      )}
-    )
-    setDomOfJE(newDom)
-  },[jobsExp])
 
   return (
     <div className="jobsDiv">
       <h2>Jobs Experience</h2>
-      {domOfJE}
-      <button id="addJobs" onClick={handleAddJob}>Add</button>
+        {domOfJE}
     </div> 
   )
 }

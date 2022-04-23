@@ -1,56 +1,49 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import EduInput from './EduInput'
-import {nanoid} from 'nanoid';
 
 function Education(props) {
-  const [eduExp, setEduExp] =useState([]);
+  const education = props.education
+  const setEducation = props.setEducation
   const [domOfEE, setDomOfEE] = useState()
 
-  useEffect(()=>{
-    const firstEdu = {
-        id:nanoid(),
-        onChange: props.onChange,
-        handleDeleteEdu: handleDeleteEdu
-    }
-    setEduExp([firstEdu])
-  },[0])
+  useEffect(() => {
+    let newDomEdu = education.map(edu => {
+      return(
+        <div  key={edu.id}> 
+          <EduInput edu={edu} onChange={handleEducationInput}/>
+          <button id={edu.id}  onClick={handleDeleteEdu}>Delete</button>
+        </div>
+      )}
+    )
+    setDomOfEE(newDomEdu)
+  },[education])
 
-
-  const handleAddEdu = function(e){
+  const handleEducationInput= function(e){
     e.preventDefault();
-    const newEdu = {
-      id:nanoid(),
-      onChange: props.onChange,
-      handleDeleteEdu: handleDeleteEdu
-    }
-    setEduExp(prevState => [...prevState, newEdu]);
+    let name = e.target.name;
+    let value = e.target.value;
+    let currentEducation = e.target.id;
+    let updatedEdu =[...education];
+    const modified = education.find(edu => edu.id === currentEducation)
+    const index = education.findIndex(edu => edu.id === currentEducation);
+    modified[name] = value ;
+    updatedEdu[index] = modified
+    setEducation(updatedEdu)   
   }
 
   const handleDeleteEdu= function(e){
     e.preventDefault();
     let deleteReference =e.target.id
-    let dele = eduExp.find(edu => edu.id===deleteReference )
-    const newEduExpArray = eduExp.filter( e => e !== dele)
-    setEduExp(newEduExpArray)
+    let dele = education.find(edu => edu.id === deleteReference )
+    const newEduExpArray = education.filter( e => e !== dele)
+    setEducation(newEduExpArray)
   }
 
-  useEffect(() => {
-    let newDom = eduExp.map(edu => {
-      return(
-        <div  key={edu.id}> 
-          <EduInput props={edu}/>
-          <button id={edu.id}  onClick={handleDeleteEdu}>Delete</button>
-        </div>
-      )}
-    )
-    setDomOfEE(newDom)
-  },[eduExp])
-
+  
   return (
     <div className="educationDiv">
       <h2>Education</h2>
       {domOfEE}
-      <button id="addEducation" onClick={handleAddEdu}>Add</button>
     </div>
   )
 }
