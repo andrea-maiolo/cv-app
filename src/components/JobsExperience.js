@@ -1,34 +1,43 @@
 import React, {Component, useState, useEffect} from 'react';
-import JobInput from './JobInput'
-import {nanoid} from 'nanoid';
+import JobInput from './JobInput';
 
 function JobsExperience(props) {
-  const jobsStateFromApp = props.jobs
-  const sJ = props.setJobs
+  const jobs = props.jobs
+  const setJobs = props.setJobs
   const [domOfJE, setDomOfJE] = useState()
 
   //this run every time a new job is added so you can DOM it
   useEffect(() => {
-    let newDom = jobsStateFromApp.map(job => {
+    let newDom = jobs.map(job => {
       return(
         <div  key={job.id}> 
-          <JobInput job={job}/>
-          <button id={job.id}  onClick={handleDeleteJob}>Delete</button>
+          <JobInput job={job} onChange={handleJobInputChange}/>
+          <button id={job.id} onClick={handleDeleteJob}>Delete</button>
         </div>
       )}
     )
     setDomOfJE(newDom)
-  },[jobsStateFromApp])
+  },[jobs])
+
+  const handleJobInputChange= function(e){
+    e.preventDefault();
+    let name = e.target.name;
+    let value = e.target.value;
+    let currentJob = e.target.id;
+    let updatedJobs =[...jobs];
+    const modified = jobs.find(job => job.id === currentJob)
+    const index = jobs.findIndex(job => job.id === currentJob);
+    modified[name] = value ;
+    updatedJobs[index] = modified
+    setJobs(updatedJobs)   
+  }
 
   const handleDeleteJob= function(e){
     e.preventDefault();
     let deleteReference =e.target.id
-    console.log(deleteReference)
-    let dele = jobsStateFromApp.find(job => job.id === deleteReference)
-    console.log(dele)
-    const newJobExpArray = jobsStateFromApp.filter( e => e !== dele)
-    console.log(newJobExpArray)
-    sJ(newJobExpArray)
+    let dele = jobs.find(job => job.id === deleteReference)
+    const newJobExpArray = jobs.filter( e => e !== dele)
+    setJobs(newJobExpArray)
   }
 
   return (
