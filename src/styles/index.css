@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.myForm {
+  margin: 5px;
+}
+
+.titleDiv {
+  background-color: #4b61d1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.personalDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.personalInput {
+  margin: 5px;
+}
+
+.jobsDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleJob {
+  display: flex;
+  flex-direction: column;
+}
+
+.jobsInput {
+  margin: 5px;
+}
+
+.educationDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.singleEdu {
+  display: flex;
+  flex-direction: column;
+}
+
+.educationInput {
+  margin: 5px;
+}
+
+.finalPageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-page {
+  display: flex;
+  margin: 5px;
+  width: 800px;
+  border: 10px solid red;
+}
+
+.side-div {
+  background-color: #efb987;
+  width: 250px;
+}
+
+.personal-display-cv {
+  margin: 5px;
+}
+
+#profilePic {
+  width: 100px;
+  height: 100px;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: red;
+}
+
+.description {
+  font-weight: 700;
+}
+
+.workExp {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.position {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
