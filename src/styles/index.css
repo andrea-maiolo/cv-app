@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.myForm {
+  margin: 5px;
+}
+
+.titleDiv {
+  background-color: #2dc46a;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.personalDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.personalInformationInput {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
+}
+
+.labelsP {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.personalInput {
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
+}
+
+.jobsDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.jobsExperienceTitle {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
+}
+
+.singleJob {
+  display: flex;
+  flex-direction: column;
+  /* border-top: 1px solid red; */
+  margin-top: 1rem;
+}
+
+.labelsJ {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.jobsInput {
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
+}
+
+.jobAndButton {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.dltJob {
+  color: #fff;
+  background-color: #6a2dc4;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 6rem;
+  height: 30px;
+}
+
+#addJobs {
+  color: #fff;
+  background-color: #2dc46a;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 9rem;
+  height: 30px;
+}
+
+.educationDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.educationTitle {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
+}
+
+.singleEdu {
+  display: flex;
+  flex-direction: column;
+  /* border-top: 1px solid red; */
+  margin-top: 1rem;
+}
+
+.labelsE {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.educationInput {
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
+}
+
+.eduAndButton {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.dltEdu {
+  color: #fff;
+  background-color: #6a2dc4;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 6rem;
+  height: 30px;
+}
+
+#addEducation {
+  color: #fff;
+  background-color: #2dc46a;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 9rem;
+  height: 30px;
+}
+
+.finalPageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-page {
+  display: flex;
+  margin: 5px;
+  width: 800px;
+  border: 10px solid red;
+}
+
+.side-div {
+  background-color: #efb987;
+  width: 250px;
+}
+
+.personal-display-cv {
+  margin: 5px;
+}
+
+#profilePic {
+  width: 100px;
+  height: 100px;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  color: red;
+}
+
+.description {
+  font-weight: 700;
+}
+
+.workExp {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.position {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
