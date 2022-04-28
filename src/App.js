@@ -4,7 +4,6 @@ import JobsExperience from "./components/JobsExperience";
 import Education from "./components/Education";
 import { nanoid } from "nanoid";
 import FinalPage from "./FinalPage";
-import profilePic from "./styles/profile.jpg";
 
 function App() {
   const [personal, setPersonal] = useState({
@@ -14,7 +13,6 @@ function App() {
     email: "",
     phoneNumber: "",
     description: "",
-    photo: profilePic,
   });
 
   const handlePersonalInputChange = function (e) {
@@ -92,9 +90,6 @@ function App() {
       <div className="titleDiv">
         <h1>CV EDITOR</h1>
       </div>
-      <button onClick={handleShowFinalPage} id="showFinalPage">
-        {showFinalPage ? "Edit" : "Show result"}
-      </button>
       {!showFinalPage && (
         <div className="formContainer">
           <form className="myForm">
@@ -112,6 +107,9 @@ function App() {
             </button>
             <button type="submit" onClick={handleShowFinalPage}>
               Submit
+            </button>
+            <button onClick={handleShowFinalPage} id="showFinalPage">
+              {showFinalPage ? "Edit" : "Show result"}
             </button>
           </form>
         </div>

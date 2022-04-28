@@ -17,47 +17,165 @@ code {
 }
 
 .titleDiv {
-  background-color: #4b61d1;
+  background-color: #2dc46a;
   margin: 0;
+  color: #fff;
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 250px;
 }
 
 .personalDiv {
   display: flex;
   flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.personalInformationInput {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
+}
+
+.labelsP {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .personalInput {
-  margin: 5px;
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
 }
 
 .jobsDiv {
   display: flex;
   flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.jobsExperienceTitle {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
 }
 
 .singleJob {
   display: flex;
   flex-direction: column;
+  /* border-top: 1px solid red; */
+  margin-top: 1rem;
+}
+
+.labelsJ {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .jobsInput {
-  margin: 5px;
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
+}
+
+.jobAndButton {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.dltJob {
+  color: #fff;
+  background-color: #6a2dc4;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 6rem;
+  height: 30px;
+}
+
+#addJobs {
+  color: #fff;
+  background-color: #2dc46a;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 9rem;
+  height: 30px;
 }
 
 .educationDiv {
   display: flex;
   flex-direction: column;
+  margin: 50px;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.educationTitle {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #2dc46a;
+  border-radius: 20px;
 }
 
 .singleEdu {
   display: flex;
   flex-direction: column;
+  /* border-top: 1px solid red; */
+  margin-top: 1rem;
+}
+
+.labelsE {
+  width: 100%;
+  display: flex;
+  height: 65px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .educationInput {
-  margin: 5px;
+  box-shadow: 7px 7px 10px #eaeaea;
+  border: none;
+  height: 2.3rem;
+  width: 50rem;
+}
+
+.eduAndButton {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 7px 7px 10px #e4e5e7;
+}
+
+.dltEdu {
+  color: #fff;
+  background-color: #6a2dc4;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 6rem;
+  height: 30px;
+}
+
+#addEducation {
+  color: #fff;
+  background-color: #2dc46a;
+  border-radius: 5px;
+  width: 5%;
+  margin-left: 9rem;
+  height: 30px;
 }
 
 .finalPageContainer {

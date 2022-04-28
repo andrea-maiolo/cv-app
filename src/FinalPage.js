@@ -6,7 +6,6 @@ import EducationDisplay from "./finalPageDisplay/EducationDisplay";
 const FinalPage = function (props) {
   const handlePrint = function (e) {
     e.preventDefault();
-    console.log(e);
     window.print();
   };
 
