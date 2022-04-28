@@ -37,9 +37,6 @@ const FinalPage = function (props) {
 
   return (
     <div>
-      <button className="printMe" onClick={handlePrint}>
-        Print now
-      </button>
       <div className="finalPageContainer">
         <div className="cv-page">
           <div className="side-div">
@@ -57,6 +54,9 @@ const FinalPage = function (props) {
           </div>
         </div>
       </div>
+      <button className="printMe" onClick={handlePrint}>
+        Print now
+      </button>
     </div>
   );
 };

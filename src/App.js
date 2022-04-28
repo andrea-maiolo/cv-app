@@ -105,12 +105,6 @@ function App() {
             <button id="addEducation" onClick={handleAddEducation}>
               Add
             </button>
-            <button type="submit" onClick={handleShowFinalPage}>
-              Submit
-            </button>
-            <button onClick={handleShowFinalPage} id="showFinalPage">
-              {showFinalPage ? "Edit" : "Show result"}
-            </button>
           </form>
         </div>
       )}
@@ -119,6 +113,9 @@ function App() {
           <FinalPage jobs={jobs} personal={personal} education={education} />
         </div>
       )}
+      <button onClick={handleShowFinalPage} id="showFinalPage">
+        {showFinalPage ? "Edit" : "Show result"}
+      </button>
     </div>
   );
 }

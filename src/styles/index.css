@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
 .myForm {
   margin: 5px;
 }
@@ -178,6 +183,21 @@ code {
   height: 30px;
 }
 
+#showFinalPage {
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #2dc46a;
+  width: 15%;
+  margin-left: 33rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: large;
+  font-weight: 700;
+  height: 50px;
+  box-shadow: 4px 6px 10px #2dc46a;
+}
+
 .finalPageContainer {
   display: flex;
   align-items: center;
@@ -223,6 +243,6 @@ code {
   border: 1px solid black;
 }
 
-.position {
+/* .position {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
+} */
