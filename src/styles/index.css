@@ -117,8 +117,7 @@ code {
   color: #fff;
   background-color: #2dc46a;
   border-radius: 5px;
-  width: 5%;
-  margin-left: 9rem;
+  margin-left: 33rem;
   height: 30px;
 }
 
@@ -178,8 +177,7 @@ code {
   color: #fff;
   background-color: #2dc46a;
   border-radius: 5px;
-  width: 5%;
-  margin-left: 9rem;
+  margin-left: 33rem;
   height: 30px;
 }
 
@@ -189,7 +187,7 @@ code {
   color: #fff;
   background-color: #2dc46a;
   width: 15%;
-  margin-left: 33rem;
+  margin-left: 32rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   font-size: large;
@@ -198,51 +196,82 @@ code {
   box-shadow: 4px 6px 10px #2dc46a;
 }
 
-.finalPageContainer {
+.finalPage {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cvAndPrintButton {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .cv-page {
   display: flex;
-  margin: 5px;
-  width: 800px;
-  border: 10px solid red;
+  margin: 3rem;
+  width: 900px;
+  box-shadow: 7px 7px 10px #e9e9e9;
 }
 
 .side-div {
-  background-color: #efb987;
-  width: 250px;
+  background-color: #9ab5d4;
 }
 
 .personal-display-cv {
-  margin: 5px;
+  margin: 1.5rem;
 }
 
-#profilePic {
-  width: 100px;
-  height: 100px;
+.name {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.pdc-contact {
+  font-family: "Times New Roman", Times, serif;
+}
+
+#description {
+  margin-top: 4rem;
+  font-weight: 600;
 }
 
 .main-div {
   display: flex;
   flex-direction: column;
+  width: 65vw;
+  margin: 1.5rem;
 }
 
-.name {
-  color: red;
-}
-
-.description {
-  font-weight: 700;
+.workExpHeader {
+  background-color: #9ab5d4;
+  padding: 1rem;
+  margin-bottom: 0;
 }
 
 .workExp {
-  margin: 5px;
-  border: 1px solid black;
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 1rem;
 }
 
-/* .position {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-} */
+.eduExpHeader {
+  background-color: #9ab5d4;
+  margin-bottom: 0;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.eduExp {
+  font-family: "Times New Roman", Times, serif;
+  padding-left: 1rem;
+}
+
+.printMe {
+  color: #fff;
+  background-color: #2dc46a;
+  border-radius: 5px;
+  height: 30px;
+  border: none;
+  margin-right: 1.2rem;
+}

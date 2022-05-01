@@ -99,11 +99,11 @@ function App() {
             />
             <JobsExperience jobs={jobs} setJobs={setJobs} />
             <button id="addJobs" onClick={handleAddJob}>
-              Add
+              Add another job experience
             </button>
             <Education education={education} setEducation={setEducation} />
             <button id="addEducation" onClick={handleAddEducation}>
-              Add
+              Add another education
             </button>
           </form>
         </div>

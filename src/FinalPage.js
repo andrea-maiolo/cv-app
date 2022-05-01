@@ -36,22 +36,16 @@ const FinalPage = function (props) {
   });
 
   return (
-    <div>
-      <div className="finalPageContainer">
-        <div className="cv-page">
-          <div className="side-div">
-            <PersonalInfoSection props={props.personal} />
-          </div>
-          <div className="main-div">
-            <h1 className="name">
-              {props.personal.firstName} {props.personal.lastName}
-            </h1>
-            <p className="description">{props.personal.description}</p>
-            <h3 className="workExpHeader">Work experience</h3>
-            {work}
-            <h3 className="eduExpHeader">Education</h3>
-            {edu}
-          </div>
+    <div className="cvAndPrintButton">
+      <div className="cv-page">
+        <div className="side-div">
+          <PersonalInfoSection props={props.personal} />
+        </div>
+        <div className="main-div">
+          <h3 className="workExpHeader">Work experience</h3>
+          {work}
+          <h3 className="eduExpHeader">Education</h3>
+          {edu}
         </div>
       </div>
       <button className="printMe" onClick={handlePrint}>
